@@ -13,23 +13,23 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
-@Service
-public class OrderServiceImpl implements OrderService {
+        @Service
+        public class OrderServiceImpl implements OrderService {
 
-    private ObjectMapper om = new ObjectMapper();
+            private ObjectMapper om = new ObjectMapper();
 
-    @Resource
-    private ProductOrderClient productOrderClient;
+            @Resource
+            private ProductOrderClient productOrderClient;
 
 
-    @Override
-    public Order save(Integer userId, Integer productId) {
-        String resStr = productOrderClient.findById(productId);
-        JsonNode jsonNode = om.createObjectNode();
-        try {
-            jsonNode = om.readTree(resStr);
-        } catch (IOException e) {
-        }
+            @Override
+            public Order save(Integer userId, Integer productId) {
+                String resStr = productOrderClient.findById(productId);
+                JsonNode jsonNode = om.createObjectNode();
+                try {
+                    jsonNode = om.readTree(resStr);
+                } catch (IOException e) {
+                }
 
         Order order = new Order();
         order.setCreateTime(new Date());
