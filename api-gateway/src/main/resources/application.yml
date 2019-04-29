@@ -12,6 +12,7 @@ eureka:
 
 zuul:
   routes:
-    order-service: /gateway/**
-    product-service: /gateway/**
+    order-service: /gateway/order/**
+    product-service: /gateway/product/**
   ignored-patterns: /*-service/**
+  sensitive-headers:
