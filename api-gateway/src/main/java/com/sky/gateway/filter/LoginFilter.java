@@ -31,7 +31,7 @@ public class LoginFilter extends ZuulFilter {
         StringBuffer requestURL = request.getRequestURL();
         System.out.println("URL地址:" + requestURL);
         if ("/gateway/order/api/order/save".equalsIgnoreCase(requestURI)) {
-            return true;
+//            return true;
         }
         return false;
     }
@@ -43,10 +43,10 @@ public class LoginFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         String accessToken = request.getHeader("access-token");
         System.out.println("accessToken:" + accessToken);
-        if (StringUtils.isEmpty(accessToken)) {
-            requestContext.setSendZuulResponse(false);
-            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
-        }
+//        if (StringUtils.isEmpty(accessToken)) {
+//            requestContext.setSendZuulResponse(false);
+//            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+//        }
         return null;
     }
 }

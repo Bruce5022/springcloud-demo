@@ -2,6 +2,8 @@ package com.sky.product.service.impl;
 
 import com.sky.product.entity.Product;
 import com.sky.product.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -9,6 +11,7 @@ import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+    private static Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
     private static Map<Integer, Product> map = new HashMap<>();
 
     static {
@@ -21,12 +24,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> listProduct() {
+        logger.info("ProductService listProduct");
         Collection<Product> values = map.values();
         return new ArrayList<>(values);
     }
 
     @Override
     public Product findById(Integer id) {
+        logger.info("ProductService findById");
         return map.get(id);
     }
 }

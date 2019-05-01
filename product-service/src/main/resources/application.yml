@@ -9,3 +9,11 @@ eureka:
 spring:
   application:
     name: product-service
+  zipkin:
+    base-url: http://116.196.92.43:9411
+  sleuth:
+    sampler:
+      probability: 1
+
+#logging:
+#  config: classpath:logback-spring.xml

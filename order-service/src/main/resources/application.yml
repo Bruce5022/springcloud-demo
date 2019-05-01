@@ -9,3 +9,8 @@ eureka:
 spring:
   application:
     name: order-service
+  zipkin:
+    base-url: http://116.196.92.43:9411
+  sleuth:
+    sampler:
+      probability: 1
