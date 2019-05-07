@@ -1,4 +1,4 @@
-package com.sky.eureka.eurekaserver;
+package com.sky.eureka;
 
 public class EurekaServerApplicationTests {
 
